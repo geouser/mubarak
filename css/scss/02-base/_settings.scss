@@ -12,9 +12,13 @@ body {
     font-family: $o;
     font-size: 17px;
     line-height: 24px;
+    padding-top: 50px;
 }
 
-
+h1 {
+    font: 65px $rl;
+    color: #FFF;
+}
 h2 {
     font-family: $r;
     font-size: 30px;

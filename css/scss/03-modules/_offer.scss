@@ -1,3 +1,16 @@
 .offer {
-    height: 800px;
+    height: 100%;
+    max-height: 900px;
+    min-height: 500px;
+    padding-top: 85px;
+    padding-bottom: 135px;
+    background-image: url("../images/offer-index.jpg");
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    @include flex($direction: column, $justify: flex-end, $alignI: flex-end);
+    .wrapper {
+        padding: 0;
+    }
 }

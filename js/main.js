@@ -37,7 +37,11 @@ jQuery(document).ready(function($) {
             }
     });
 
-
+    $('.search_type').focus(function(){
+        $(this).addClass('active');
+    }).blur(function(){
+        $(this).removeClass('active');
+    });
 
     /*---------------------------
                                   Magnific popup
