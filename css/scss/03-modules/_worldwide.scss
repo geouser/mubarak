@@ -1,0 +1,18 @@
+.worldwide {
+    padding-bottom: 50px;
+}
+.worldwide-box {
+    text-align: center;
+    padding: 230px 0;
+    background-image: url(../images/worldwide.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    p {
+        font-size: 65px;
+        color: #fff;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.44);
+        font-family: $rl;
+    }
+}

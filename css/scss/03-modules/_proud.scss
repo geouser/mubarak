@@ -1,0 +1,24 @@
+.proud {
+    padding-top: 100px;
+}
+
+.proud-item {
+    width: 33.3333%;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 24px;
+    font-family: $r;
+    line-height: normal;
+
+    figure {
+        margin: 0;
+        height: 102px;
+        @extend %vertAlign;
+        margin-bottom: 17px;
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}

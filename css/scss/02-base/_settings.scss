@@ -1,0 +1,66 @@
+
+
+
+// TYPOGRAPHIC
+// ---------------------------
+html,
+body {
+	height: 100%;
+}
+
+body {
+    font-family: $o;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+
+h2 {
+    font-family: $r;
+    font-size: 30px;
+    position: relative;
+    margin-bottom: 35px;
+    font-weight: normal;
+
+    &:before {
+        content: '';
+        width: 170px;
+        height: 6px;
+        display: block;
+        background-color: #C3D0D1;
+        margin-left: -95px;
+        margin-bottom: 30px;
+
+        @media (max-width: 1140px) {
+            margin-left: 0;
+        }
+    }
+}
+
+// lAYOUT
+// ---------------------------
+.wrapper {
+	width: 1110px;
+	margin: 0 auto;
+    padding: 0 95px;
+
+    &.no-padding {
+        padding: 0;
+    }
+
+    @media (max-width: 1140px) {
+        padding: 0 15px;
+        width: 100%;
+
+        &.no-padding {
+            padding: 0 15px;
+        }
+    }
+}
+section {
+    padding: 80px 0;
+}
+
+.flex {
+    @include flex();
+}
