@@ -1,0 +1,85 @@
+.policies {
+    padding-bottom: 20px;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 140px;
+        bottom: 100px;
+        z-index: -1;
+        background-color: #C3D0D1;
+    }
+}
+.policy {
+    width: -webkit-calc(33.333% - 13px);
+    width: calc(33.333% - 13px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(47, 168, 114, .5);
+        background-image: url(../images/zoom.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 30px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .label {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(47, 168, 114, .85);
+        padding: 0 20px;
+        @extend %vertAlign;
+        font-size: 18px;
+        color: #fff;
+        font-family: $mb;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        z-index: 2;
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 95%;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    &:hover {
+        .label {
+            background-color: $green;
+        }
+
+        &:after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    
+}
