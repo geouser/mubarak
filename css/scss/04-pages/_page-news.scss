@@ -1,0 +1,77 @@
+.news {
+    @include flex($alignI: stretch);
+    padding: 60px 0;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 170px;
+        height: 1px;
+        background-color: #C3D0D1;
+        position: absolute;
+        left: -95px;
+        bottom: 0;
+    }
+
+    &:first-of-type:before {
+        content: '';
+        width: 170px;
+        height: 1px;
+        background-color: #C3D0D1;
+        position: absolute;
+        left: -95px;
+        top: 0;
+    }
+    &:first-of-type {
+        margin-top: 60px;
+    }
+
+    &__title {
+        width: 100%;
+        font-size: 24px;
+        font-family: $mb;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    &__date {
+        color: $green;
+        font-family: $m;
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    &__short {
+
+    }
+
+    .button {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &-preview {
+        width: -webkit-calc(100% - 545px);
+        width: calc(100% - 545px);
+        position: relative;
+        padding-right: 20px;
+        overflow: hidden;
+    }
+
+    &-thumbnail {
+        width: 545px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.company-news {
+    .wrapper {
+        padding-left: 95px;
+    }
+}

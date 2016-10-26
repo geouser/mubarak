@@ -1,0 +1,132 @@
+.button {
+    height: 60px;
+    line-height: 60px;
+    border: 0;
+    background-color: $green;
+    color: #fff;
+    font-size: 18px;
+    font-family: $m;
+    display: inline-block;
+    padding: 0 50px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+
+.request-form {
+    background-color: #C3D0D1;
+    margin-bottom: -80px;
+    padding-top: 60px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 65px;
+
+        &:before {
+            background-color: #000;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+
+    input { 
+        height: 50px;
+        width: 100%;
+        padding: 0 20px;
+        background-color: #fff;
+        border: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        font-size: 16px;
+        font-family: $m;
+        padding-top: 16px;
+    }
+
+    label {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        font-family: $m;
+        color: #999999;
+        font-size: 16px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        pointer-events: none;
+    }
+
+    &.focus {
+        label {
+            top: 25%;
+            font-size: 12px;
+        }
+        input {
+            background-color: #ECF3F3;
+        }
+    }
+
+    &.required:after {
+        content: '*';
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        color: #ff0000;
+        font-size: 16px;
+        font-family: $m;
+    }
+
+    &.textarea {
+        width: 100%;
+
+        textarea {
+            width: 100%;
+            height: 190px;
+            border: 0;
+            resize: none;
+            padding: 0 20px;
+            border-top: 20px solid transparent;
+            font-size: 16px;
+            font-family: $m;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        label {
+            top: 40px;
+        }
+
+        &.focus {
+            label {
+                top: 15px;
+            }
+            textarea {
+                background-color: #ECF3F3;
+            }
+        }
+    }
+}
+
+.inputs-group {
+    .form-group {
+        width: -webkit-calc(33.333% - 13px);
+        width: calc(33.333% - 13px);
+    }
+}
+
+.buttons-group {
+    padding: 40px 0;
+    text-align: center;
+}
