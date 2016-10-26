@@ -1,0 +1,76 @@
+.affiliate {
+    .flex {
+        @include flex($alignI: flex-start);
+    }
+
+    &__article {
+        width: 500px;
+        border-right: 1px solid #C3D0D1;
+        padding-right: 55px;
+
+        ul li {
+            width: 100%;
+        }
+    }
+
+    &__contacts {
+        width: -webkit-calc(100% - 500px);
+        width: calc(100% - 500px);
+        padding-left: 55px;
+
+        .group {
+            margin-bottom: 20px;
+            font-family: $m;
+            font-size: 18px;
+
+            &-title {   
+                color: #666666;
+            }
+            a {
+                font-size: 24px;
+            }
+        }
+
+        .phones,
+        .emails {
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .emails {
+            font-size: 24px;
+            font-family: $m;
+
+            a {
+                border-bottom: 1px solid #C3D0D1;
+                color: #000;
+            }
+        }
+
+        .phones {
+            margin-bottom: 50px;
+        }
+
+        .phones:before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 0;
+            background-image: url(../images/phone-green.svg);
+            background-size: 100%;
+            top: 3px;
+        }
+
+        .emails:before {
+            content: '';
+            width: 15px;
+            height: 12px;
+            position: absolute;
+            left: 0;
+            background-image: url(../images/mail-green.svg);
+            background-size: 100%;
+            top: 7px;
+        }
+    }
+}

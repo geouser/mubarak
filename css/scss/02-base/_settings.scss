@@ -16,11 +16,12 @@ body {
 }
 
 h1 {
-    font: 65px $rl;
+    font: 65px $mb;
     color: #FFF;
+    font-weight: normal;
 }
 h2 {
-    font-family: $r;
+    font-family: $mb;
     font-size: 30px;
     position: relative;
     margin-bottom: 35px;

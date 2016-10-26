@@ -33,7 +33,7 @@
             content: '';
             width: 90px;
             height: 6px;
-            background-color: #20704D;
+            background-color: #1B503E;
             display: block;
             margin-left: -20px;
             margin-bottom: 15px;
@@ -41,7 +41,7 @@
 
         &__title {
             font-size: 24px;
-            font-family: $r;
+            font-family: $m;
             font-weight: normal;
             margin-bottom: 20px;
         }
@@ -55,11 +55,11 @@
             font-size: 18px;
 
             .name {
-                font-family: $r;
+                font-family: $m;
                 display: block;
             }
             .position {
-                font-family: $rl;
+                font-family: $ml;
                 display: block;
             }
         }
@@ -80,7 +80,7 @@
                 content: '';
                 width: 95px;
                 height: 6px;
-                background-color: #20704D;
+                background-color: #1B503E;
                 display: block;
                 margin-left: -20px;
                 margin-bottom: 15px;
@@ -89,7 +89,7 @@
             a {
                 font-size: 24px;
                 color: #fff;
-                font-family: $r;
+                font-family: $m;
                 display: inline-block;
                 margin-bottom: 35px;
             }
@@ -167,7 +167,7 @@
 }
 
 .footer-top {
-    background-color: #1B503E;
+    background-color: #20704D;
     padding: 70px 0 85px;
 
     .wrapper {
