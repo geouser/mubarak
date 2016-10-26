@@ -80,11 +80,13 @@
 /* ------------------------------------ */
 /*  NAV STYLES  */
 .mainNav {
-    ul {
+    > ul {
         list-style-type: none;
-        li {
+        > li {
             display: inline-block;
-            a {
+            position: relative;
+            height: 50px;
+            > a {
                 color: #FFF;
                 display: inline-block;
                 font-size: 18px;
@@ -94,9 +96,84 @@
                 &:hover {
                     border-color: #FFF;
                 }
+                &.menu-item-has-children {
+                    
+                }
             }
             &:last-of-type a {
                 margin-right: 0;
+            }
+            .sub-menu {
+                    @include position(absolute, 100%, 0, auto, 0);
+                    left: 50%;
+                    transform: translate(calc(-50% - 15px), 0);
+                    width: 220px;
+                    list-style-type: none;
+                    background-color: $green;
+                    margin-top: 12px;
+                    visibility: hidden;
+                    opacity: 0;
+                    margin-top: 20px;
+                    -webkit-transition: opacity .2s, margin-top .1s;
+                       -moz-transition: opacity .2s, margin-top .1s;
+                        -ms-transition: opacity .2s, margin-top .1s;
+                         -o-transition: opacity .2s, margin-top .1s;
+                            transition: opacity .2s, margin-top .1s;
+                    li {
+                        display: block;
+                        a {
+                            color: #FFF;
+                            font: 14px/35px $m;
+                            padding-left: 20px;
+                            display: block;
+                            background-color: transparent;
+                            position: relative;
+                            @include transition(all, .2s);
+                            &:hover {
+                                background-color: rgba(255,255,255, .07);
+                            }
+                            &:after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                right: 14px;
+                                top: 0;
+                                bottom: 0;
+                                margin: auto;
+                                color: #FFF;
+                                width: 4px;
+                                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAQCAYAAADagWXwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiM2MzMmI3My02ZDM2LWJmNGItYWRlNS0wMzg0MmFjYmIwMzIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDlDMDA2NkU5Qjg4MTFFNjlCN0FENTRFQzUzQ0UxMjUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDlDMDA2NkQ5Qjg4MTFFNjlCN0FENTRFQzUzQ0UxMjUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDgzZjMyNDctNzg5Yy1mMTQwLThlYjItNTg4OWUwMjM4NTU3IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MDE5NWJmNTUtNTdkZS0xMWU2LTg5ODYtOTViZGNjMDdkMjA2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+w1IBkgAAAJxJREFUeNpi+P///3EgXgrEjEDMgIxBxNv/EFCITTISKvkLiG3RJUF4MlTBMyCWQJdkA+KjUAUHgZgFWRKEZYD4FVRBD7okCLsA8R8g/gfEweiSIFwJ1X2PiQETsMBZaLrckIwNQJaQA+LXUCM70L1yEiqxD4iZkSWnQSWeALEYciDEQiV+ArE1evC9g0rmYwt4ULDNw+JfBoAAAwCUAl1YNe5LjwAAAABJRU5ErkJggg==");
+                                height: 10px;
+                                -webkit-background-size: 100% 100%;
+                                     -o-background-size: 100% 100%;
+                                        background-size: 100% 100%;
+                            }
+                        }
+                    }
+                    &:before {
+                        content: "";
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        border-left: 14px solid transparent;
+                        border-right: 14px solid transparent;
+                        border-bottom: 14px solid $green;
+                        position: absolute;
+                        top: -12px;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+                }
+            &:hover {
+                .sub-menu {
+                    visibility: visible;
+                    opacity: 1;
+                    margin-top: 12px;
+                }
+                > a {
+                    border-color: #FFF;
+                }
             }
         }
     }
