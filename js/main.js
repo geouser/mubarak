@@ -23,6 +23,36 @@ jQuery(document).ready(function($) {
     });
       
 
+
+    /*---------------------------
+                                  Acoordion
+    ---------------------------*/
+    $( function() {
+        if ( $( ".accordion" ).length > 0 ) {
+            $( ".accordion" ).accordion({
+                heightStyle: "content",
+                collapsible: true
+            });    
+        }
+    } );
+
+    /*---------------------------
+                                Inputs
+    ---------------------------*/
+    $('input, textarea').on('focusin', function(event) {
+        event.preventDefault();
+        $(this).parent().addClass('focus');
+    });
+    $('input, textarea').on('focusout', function(event) {
+        event.preventDefault();
+        if ( !$(this).val() ) {
+            $(this).parent().removeClass('focus');
+        }
+    });
+
+
+
+
     /*---------------------------
                                   MENU TOGGLE
     ---------------------------*/

@@ -1,0 +1,106 @@
+.accordion {
+
+    &__link {
+        background-color: #ECF3F3;
+        color: #000020;
+        padding: 35px 150px 35px 95px;
+        text-transform: uppercase;
+        font-family: $m;
+        font-size: 24px;
+        font-weight: normal;
+        cursor: pointer;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:not(:first-of-type) {
+            margin-top: 20px;
+        }
+
+        .arrow {
+            width: 14px;
+            display: inline-block;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 115px;
+            top: 50%;
+            margin-top: -4px;
+            height: 8px;
+
+            svg {
+                width: 100%;
+                display: block;
+            }
+
+            polyline {
+                fill:none;
+                stroke:#666666;
+                stroke-width:2;
+                stroke-linecap:round;
+                stroke-linejoin:round;
+                stroke-miterlimit:10;
+                -webkit-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+            }
+        }
+
+        &.ui-state-hover,
+        &.ui-state-active {
+            background-color: $green;
+            color: #fff;
+
+            .arrow {
+                polyline {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        &.ui-state-active {
+            .arrow {
+                -webkit-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+
+
+    &__content {
+        padding: 60px 95px 40px;
+        background-color: #ECF3F3;
+
+        &:not(:last-of-type) {
+            margin-bottom: 60px;
+        }
+
+        article {
+            ul li {
+                width: 100%;
+                margin-bottom: 0;
+                font-size: 17px;
+                padding-left: 0;
+
+                &:before {
+                    content: '-';
+                    display: inline-block;
+                    position: static;
+                    margin-right: 5px;
+                    width: auto;
+                    height: auto;
+                    background-color: transparent;
+                }
+            }
+            h3 {
+                font-family: $mb;
+                font-weight: normal;
+            }
+        }
+    }
+}
