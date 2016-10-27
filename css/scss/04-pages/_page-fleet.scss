@@ -1,12 +1,33 @@
+.fleet-section {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 40px;
+
+    &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 140px;
+        bottom: 100px;
+        z-index: -1;
+        background-color: #C3D0D1;
+    }
+}
+
+
 .fleet {
     display: block;
     height: 300px;
-    margin-bottom: 20px;
     position: relative;
     background-position: 50% 50%;
     -webkit-background-size: cover;
          -o-background-size: cover;
             background-size: cover;
+            
+    &:not(:last-child) { 
+        margin-bottom: 20px;
+    }
+
     &:after {
         display: block;
         content: "";
