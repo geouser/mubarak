@@ -5,6 +5,7 @@
     @include m1140 {
         padding: 0 20px;
     }
+    z-index: 100;
     @include m1000 {
         position: fixed;
         width: 300px;
