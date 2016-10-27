@@ -9,6 +9,14 @@
             width: 100%;
             display: block;
         }
+        @include m700 {
+            width: 170%;
+            margin-left: -30%;
+        }
+        @include m400 {
+            width: 200%;
+            margin-left: -34%;
+        }
     }
 
     .pin {
@@ -48,12 +56,24 @@
    
     &-box {
         @include flex($alignI: flex-start, $justify: flex-start);
+        @include m1000 {
+            display: block;
+        }
     }
 
     .filial {
         width: 33.333%;
         padding-left: 95px;
-
+        @include m1140 {
+            padding-left: 40px;
+        }
+        @include m1000 {
+           width: 100%;
+           margin-bottom: 40px;
+        }
+        @include m500 {
+           padding-left: 10px;
+        }
         &__title {
             font-family: $mb;
             font-weight: normal;
@@ -64,7 +84,9 @@
             -webkit-transition: all 0.3s ease;
             -o-transition: all 0.3s ease;
             transition: all 0.3s ease;
-
+            @include m1140 {
+               font-size: 20px;
+            }
             &:before {
                 content: '';
                 width: 95px;
@@ -91,6 +113,9 @@
 
         p {
             margin-bottom: 20px;
+            @include m1140 {
+               font-size: 18px;
+            }
         }
 
         .affiliate__contacts {
@@ -110,6 +135,14 @@
             .group p, .group a {
                 font-size: 18px;
                 margin-bottom: 0;
+                @include m1140 {
+                   font-size: 16px;
+                }
+            }
+            .group {
+                @include m1140 {
+                    margin-bottom: 10px;
+                }
             }
         }
 
