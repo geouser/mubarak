@@ -1,0 +1,116 @@
+.ship {
+    @include flex();
+    height: 300px;
+    margin-bottom: 20px;
+    color: #000;
+    &__main {
+        height: 100%;
+        width: 60%;
+        padding-left: 85px;
+        background-position: 50% 50%;
+        position: relative;
+        -webkit-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
+        &__info {
+            position: absolute;
+            bottom: 30px;
+            max-width: 90%;
+            z-index: 2;
+        }
+        h2,span {
+            color: #FFF;
+            &:before {
+                background-color: #FFF;
+            }
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        &:after {
+            display: block;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(21,75,21,.7);
+            opacity: 0;
+            @include transition(all, .2s);
+        }
+        .download {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 38px;
+            opacity: 0;
+            font: 16px $ob;
+            color: #fff568;
+            @include transition(all, .2s);
+            text-align: center;
+            z-index: 2;
+            i {
+                display: block;
+                margin: 0 auto 14px;
+                width: 30px;
+                height: 40px;
+                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAoCAYAAADpE0oSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiM2MzMmI3My02ZDM2LWJmNGItYWRlNS0wMzg0MmFjYmIwMzIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0JGMDE5MUE5QzQyMTFFNkE2QTY4QzA4ODNCQTYzRkUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0JGMDE5MTk5QzQyMTFFNkE2QTY4QzA4ODNCQTYzRkUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZmRiNTA3MjQtNmQ5Ny1lYzRmLWE1ODctZWM2YzI4YzhhOWFhIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YjJmN2Y3MmItNTc2Mi0xMWU2LTg5ODYtOTViZGNjMDdkMjA2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/xA5AwAAAVBJREFUeNrsl71KA0EUhWckpAiSICJiEYiPYx/QIoWNhb5I3kFbwdYHSGEImCJEUiiBPIhVyHjcO8V19u/OLKKQu/BBdvbu+cKS7J41zhmTwBg4z9ixHSkH5o82FatYxSpWsYqjxX1w0TzeIsP2peIBmIJnMGwgHfoMZNmBRHwPzkEbPIHLBOmVP7ftsx5yIwXt4gysWVnYgpG8gWSzW7a0psyfDaSs2pyC90B+XS/OZrj0g7Ly1aeqV52AFZvdgZtycXZsx9ZXlFHcuepK3TFYBvK7vNjcBtI3Ore87Eka5RFYBPIN298E0gWdU90ypXW2B14FrXVOs/WDMV26C2YVWTOakfXq2CJ/CF4KcqZ0TF7oU94iOmDCMia0FvcmYb/DErYOePSfR/g6n9H3tkQxv/fp81i0tQqulf0dlXVaffbvx9Xwj2n1Uv9v8ZcAAwCZMBr5QTztOQAAAABJRU5ErkJggg==");
+                -webkit-background-size: 100% 100%;
+                     -o-background-size: 100% 100%;
+                        background-size: 100% 100%;
+            }
+            width: 180px;
+        }
+    }
+    &__detail {
+        width: 40%;
+        background-color: #ECF3F3;
+        padding: 25px 80px;
+        height: 100%;
+        color: #000;
+        @include transition(all, .2s);
+    }
+    &:hover &__detail {
+        background-color: #2fa872;
+        color: #FFF;
+    }
+    &:hover &__main {
+        &:after {
+            opacity: 1;
+        }
+        .download {
+            opacity: 1;
+        }
+    }
+}
+
+.breadcrumbs {
+    font: 30px $m;
+    color: #FFF;
+    list-style-type: none;
+    li {
+        color: #FFF;
+        display: inline-block;
+        border-bottom: 1px solid rgba(255,255,255,.5);
+        a {
+            color: #FFF;
+        }
+        &:after {
+            content: '/';
+            display: inline-block;
+            margin: 0 4px;
+            color: #FFF;
+        }
+        &:last-of-type {
+            border: none;
+            a {
+                font: 65px $mb;
+            }
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
