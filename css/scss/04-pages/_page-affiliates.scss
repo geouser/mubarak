@@ -8,6 +8,13 @@
         border-right: 1px solid #C3D0D1;
         padding-right: 55px;
 
+        @media (max-width: 1000px) {
+            width: 100%;
+            border-right: 0;
+            padding-bottom: 30px;
+            padding-right: 0;
+        }
+
         ul li {
             width: 100%;
         }
@@ -18,16 +25,28 @@
         width: calc(100% - 500px);
         padding-left: 55px;
 
+        @media (max-width: 1000px) {
+            width: 100%;
+            padding-left: 0;
+        }
+
         .group {
             margin-bottom: 20px;
             font-family: $m;
             font-size: 18px;
+
+            @media (max-width: 1000px) {
+                font-size: 16px;
+            }
 
             &-title {   
                 color: #666666;
             }
             a {
                 font-size: 24px;
+                @media (max-width: 1000px) {
+                    font-size: 18px;
+                }
             }
         }
 
@@ -40,6 +59,10 @@
         .emails {
             font-size: 24px;
             font-family: $m;
+
+            @media (max-width: 1000px) {
+                font-size: 18px;
+            }
 
             a {
                 border-bottom: 1px solid #C3D0D1;
