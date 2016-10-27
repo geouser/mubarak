@@ -34,9 +34,20 @@
     cursor: pointer;
     z-index: 1;
     @include m700 {
+        width: -webkit-calc(50% - 2px);
+        width: calc(50% - 2px);
+        display: inline-block;
+    }
+
+    @media (max-width: 450px) {
         width: 290px;
         display: block;
-        margin: 0 auto 40px;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &:after {
         content: '';
@@ -76,7 +87,8 @@
         transition: all 0.3s ease;
         z-index: 2;
         @include m800 {
-            font-size: 16px;
+            font-size: 15px;
+            padding: 0 10px;
         }
         span {
             display: inline-block;
