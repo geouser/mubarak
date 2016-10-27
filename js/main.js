@@ -52,6 +52,27 @@ jQuery(document).ready(function($) {
 
 
 
+    /*----------------------------
+                                    Contacts
+    ---------------------------*/
+    $('.filial').on('click', function(event) {
+        event.preventDefault();
+        $(this).addClass('active').siblings().removeClass('active');
+
+        $('.pin').removeClass('active')
+        $($(this).attr('data-pin')).addClass('active');
+    });
+
+
+    $('.pin').on('click', function(event) {
+        event.preventDefault();
+        $(this).addClass('active').siblings().removeClass('active');
+
+        $('.filial').removeClass('active')
+        $('.filial[data-pin=#'+$(this).attr('id')+']').addClass('active');
+    });
+
+
 
     /*---------------------------
                                   MENU TOGGLE
