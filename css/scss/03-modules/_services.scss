@@ -27,10 +27,16 @@
     background-size: cover;
     background-position: 50% 50%;
     margin-bottom: 20px;
+
+    @media (max-width: 1000px) {
+        width: -webkit-calc(50% - 10px);
+        width: calc(50% - 10px);
+    }
+
     @include m700 {
-        width: 90%;
+        width: 100%;
         display: block;
-        margin: 0 auto 10px; 
+        margin: 0 auto 20px; 
     }
     @include m500 {
          width: 100%;
@@ -40,12 +46,28 @@
         width: -webkit-calc(66.666% - 6.5px);
         width: calc(66.666% - 6.5px);
         @include m700 {
-            width: 90%;
+            width: 100%;
             display: block;
-            margin: 0 auto 10px; 
+            margin: 0 auto 20px; 
         }
         @include m500 {
              width: 100%;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        &:first-child {
+            width: -webkit-calc(50% - 10px);
+            width: calc(50% - 10px);
+        }
+        &:last-child {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 700px) {
+        &:first-child {
+            width: 100%;
         }
     }
 
@@ -71,10 +93,20 @@
             line-height: normal;
             width: 100%;
             margin-bottom: 8px;
+
+            @media (max-width: 700px) {
+                font-size: 24px;
+                line-height: 24px;
+            }
         }
 
         &__desc {
             width: 100%;
+
+            @media (max-width: 700px) {
+                font-size: 15px;
+                line-height: 16px;
+            }
         }
     }
 

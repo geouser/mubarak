@@ -123,6 +123,10 @@
     .form-group {
         width: -webkit-calc(33.333% - 13px);
         width: calc(33.333% - 13px);
+
+        @media (max-width: 700px) {
+            width: 100%;
+        }
     }
 }
 
