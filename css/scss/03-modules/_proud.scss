@@ -1,5 +1,9 @@
 .proud {
     padding-top: 100px;
+    @include m700 {
+        padding-top: 40px;
+        text-align: center;
+    }
 }
 
 .proud-item {
@@ -9,7 +13,14 @@
     font-size: 24px;
     font-family: $m;
     line-height: normal;
-
+    @include m700 {
+        width: 260px;
+        text-align: center;
+        margin: 0 auto 30px;
+        font-size: 18px;
+        display: inline-block;
+        vertical-align: top;
+    }
     figure {
         margin: 0;
         height: 102px;

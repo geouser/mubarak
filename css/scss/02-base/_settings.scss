@@ -16,6 +16,9 @@ body {
     @include m1000 {
         padding-top: 0;
     }
+    @include m700 {
+        font-size: 14px;
+    }
 }
 
 h1 {
@@ -78,8 +81,17 @@ h2 {
 }
 section {
     padding: 80px 0;
+    @include m1140 {
+        padding: 60px 0;
+    }
+    @include m700 {
+        padding: 30px 0;
+    }
 }
 
 .flex {
     @include flex();
+    @include m700 {
+        display: block;
+    }
 }
