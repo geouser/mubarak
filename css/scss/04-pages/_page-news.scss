@@ -3,6 +3,10 @@
     padding: 60px 0;
     position: relative;
 
+    @media (max-width: 700px) {
+
+    }
+
     &:after {
         content: '';
         width: 170px;
@@ -11,6 +15,10 @@
         position: absolute;
         left: -95px;
         bottom: 0;
+        @media (max-width: 700px) {
+            left: 50%;
+            margin-left: -85px;
+        }
     }
 
     &:first-of-type:before {
@@ -21,6 +29,10 @@
         position: absolute;
         left: -95px;
         top: 0;
+        @media (max-width: 700px) {
+            left: 50%;
+            margin-left: -85px;
+        }
     }
     &:first-of-type {
         margin-top: 60px;
@@ -32,6 +44,12 @@
         font-family: $mb;
         margin-bottom: 20px;
         font-weight: normal;
+
+        @media (max-width: 700px) {
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+        }
     }
 
     &__date {
@@ -44,7 +62,9 @@
     }
 
     &__short {
-
+        @media (max-width: 1140px) {
+            font-size: 14px;
+        }
     }
 
     .button {
@@ -59,10 +79,43 @@
         position: relative;
         padding-right: 20px;
         overflow: hidden;
+        padding-bottom: 70px;
+
+        @media (max-width: 1000px) {
+            width: 55%;
+        }
+
+        @media (max-width: 800px) {
+            width: 50%;
+        }
+
+        @media (max-width: 700px) {
+            -webkit-order: 2;
+            -ms-flex-order: 2;
+            order: 2;
+            width: 100%;
+            padding-right: 0;
+        }
     }
 
     &-thumbnail {
         width: 545px;
+
+        @media (max-width: 1000px) {
+            width: 45%;
+        }
+
+        @media (max-width: 800px) {
+            width: 50%;
+        }
+
+        @media (max-width: 700px) {
+            width: 100%;
+            -webkit-order: 0;
+            -ms-flex-order: 0;
+            order: 0;
+            margin-bottom: 20px;
+        }
 
         img {
             display: block;
@@ -73,5 +126,9 @@
 .company-news {
     .wrapper {
         padding-left: 95px;
+
+        @media (max-width: 1140px) {
+            padding-left: 15px;
+        }
     }
 }
