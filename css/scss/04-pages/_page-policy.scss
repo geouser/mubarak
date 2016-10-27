@@ -12,6 +12,19 @@
         background-color: #C3D0D1;
     }
 }
+.greyBg {
+    position: relative;
+    &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        top: 140px;
+        bottom: 100px;
+        z-index: -1;
+        background-color: #C3D0D1;
+    }
+}
+
 .policy {
     width: -webkit-calc(33.333% - 13px);
     width: calc(33.333% - 13px);
