@@ -33,7 +33,11 @@
     position: relative;
     cursor: pointer;
     z-index: 1;
-
+    @include m700 {
+        width: 290px;
+        display: block;
+        margin: 0 auto 40px;
+    }
     &:after {
         content: '';
         width: 100%;
@@ -71,7 +75,9 @@
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
         z-index: 2;
-
+        @include m800 {
+            font-size: 16px;
+        }
         span {
             display: inline-block;
             vertical-align: middle;
