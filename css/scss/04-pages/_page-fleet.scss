@@ -31,6 +31,15 @@
         &:before {
             display: none;
         }
+        @include m800 {
+            left: 40px;
+            max-width: 80%;
+        }
+        @include m500 {
+            left: 20px;
+            font-size: 26px;
+            bottom: 0;
+        }
     }
     a {
         display: block;
@@ -47,10 +56,21 @@
         -webkit-background-size: 100% 100%;
              -o-background-size: 100% 100%;
                 background-size: 100% 100%;
+        @include m800 {
+            right: 40px;
+            width: 36px;
+            height: 16px;
+        }
+        @include m500 {
+            right: 10px;
+        }
     }
     &:hover {
         h2 {
             font-size: 36px;
+            @include m500 {
+                font-size: 28px;
+            }
         }
         a {
             max-width: 44px;
