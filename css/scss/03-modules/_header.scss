@@ -1,18 +1,48 @@
          
 .mainHeader {
     @include position(absolute, 0, 0, auto, 0);
+    @include transition(all, .2s);
+    @include m1140 {
+        padding: 0 20px;
+    }
+    @include m1000 {
+        position: fixed;
+        width: 300px;
+        left: -300px;
+        height: 100%;
+        overflow: scroll;
+        background-color: $green;
+        padding: 20px 10px;
+        &.active {
+            left: 0;
+        }
+    }
+    @include m500 {
+        width: 260px;
+    }
     &__top {
         height: 50px;
         background-color: #FFF;
+        @include m1000 {
+            height: auto;
+            background-color: transparent;
+        }
         .wrapper {
             height: 100%;
             @include flex(); 
             padding: 0;
+            @include m1000 {
+                display: block;
+            }
         }
         &__left,
         &__right {
             color: #000;
             width: 50%;
+            @include m1000 {
+                width: 100%;
+                color: #FFF;
+            }
         }
         &__right {
             text-align: right;
@@ -21,6 +51,10 @@
         .social {
             display: inline-block;
             vertical-align: middle;
+            @include m1000 {
+                display: block;
+                margin: 10px auto;
+            }
         }
         .tel {
             display: inline-block;
@@ -41,6 +75,15 @@
                     background-size: 100% 100%;
                     background-image: url("../images/phone.svg");
             }
+            @include m1000 {
+                display: block;
+                margin: 10px auto;
+                text-align: center;
+                color: #fff;
+                &:before {
+                    display: none;
+                }
+            }
         }
         .mail {
             display: inline-block;
@@ -60,12 +103,24 @@
                     background-size: 100% 100%;
                 background-image: url("../images/mail.svg");
             }
+            @include m1000 {
+                    display: block;
+                    margin: 10px auto;
+                    text-align: center;
+                    color: #fff;
+                    &:before {
+                        display: none;
+                    }
+                }
         }
     }
     &__bottom {
         .wrapper {
             @include flex(); 
             padding: 0;
+            @include m1000 {
+                display: block;
+            }
         }
         padding-top: 25px;
     }
@@ -76,7 +131,16 @@
         /*.............end media..............*/
 }
 
-
+.logo {
+    display: block;
+    img {
+        max-width: 100%;
+    }
+    @include m1000 {
+        max-width: 90%;
+        margin: 10px auto 30px;
+    }
+}
 /* ------------------------------------ */
 /*  NAV STYLES  */
 .mainNav {
@@ -86,6 +150,12 @@
             display: inline-block;
             position: relative;
             height: 50px;
+            @include m1000 {
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                height: auto;
+            }
             > a {
                 color: #FFF;
                 display: inline-block;
@@ -96,8 +166,11 @@
                 &:hover {
                     border-color: #FFF;
                 }
-                &.menu-item-has-children {
-                    
+                @include m1140 {
+                    margin-right: 15px;
+                }
+                @include m1000 {
+                    margin-right: 0;
                 }
             }
             &:last-of-type a {
@@ -231,6 +304,9 @@
 
 .social {
     margin-left: 65px;
+    @include m1000 {
+        text-align: center;
+    }
     &__item {
         display: inline-block;
         vertical-align: middle;
@@ -264,30 +340,33 @@
 
 .menu-button     {    
     display: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 39px;
     @include position(fixed, 15px, 15px, auto, auto);
     margin: auto; 
     cursor: pointer;
     z-index: 100;
-    background-color: salmon;
+    background-color: $green;
     border: none;
     -webkit-border-radius: 4px;
             border-radius: 4px;
+    @include m500 {
+        right: 10px;
+    }
     .menu-line {
         display: block;
         @include position(absolute, auto, 0, auto, 0);
         width: 60%;
-        height: 5px;
+        height: 3px;
         background-color: #fff;
         -webkit-border-radius: 1px;
         border-radius: 1px;
         @include transition(all, .4s);
     }
 
-    .top_line              {   top: 12px;  margin: auto;}
-    .middle_line           {   top: 22px;  margin: auto;}
-    .bottom_line           {   bottom: 12px; margin: auto;}
+    .top_line              {   top: 10px;  margin: auto;}
+    .middle_line           {   top: 18px;  margin: auto;}
+    .bottom_line           {   bottom: 10px; margin: auto;}
 
     &.active               {   -webkit-border-radius: 6px; border-radius: 6px;}
     &.active .top_line     {   @include transform(rotate(45deg)); top: 45%;}
@@ -295,7 +374,7 @@
     &.active .middle_line  {   width: 0; left: 50%;}
 
         /*.................media.............*/
-        @include m800 {
+        @include m1000 {
             display: block;
         }
         /*..............end media.............*/

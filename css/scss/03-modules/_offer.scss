@@ -13,4 +13,7 @@
     .wrapper {
         padding: 0;
     }
+    @include m1140 {
+        padding: 80px 40px;
+    }
 }
