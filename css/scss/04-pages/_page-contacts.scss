@@ -45,8 +45,7 @@
 
 
 .filials {
-    padding-bottom: 0;
-    
+   
     &-box {
         @include flex($alignI: flex-start, $justify: flex-start);
     }
