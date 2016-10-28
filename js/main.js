@@ -4,7 +4,7 @@ window.params = {
     isIOS: /iPhone|iPad|iPod/i.test(navigator.userAgent)
 };
 
-if (isMobile) {
+if (window.params.isMobile) {
     $('.search_type').addClass('active');
 }
 
